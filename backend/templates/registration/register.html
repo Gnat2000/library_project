@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    Регистрация на сайте
+{% endblock %}
+
+{% block login %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="center">Регистрация на сайте</h3>
+                <form class="form-horizontal" role="form" action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="{{ field.name }}">{{ field.label }}</label>
+                            <div class="col-md-7">
+                                {{ field.errors }}
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <p class="help">{{ field.help_text|safe }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <input class="btn btn-success center-block" type="submit" value="Зарегистрироваться">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

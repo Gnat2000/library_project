@@ -13,18 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.base import RedirectView
-from .views import home, home_files
+from loginsyst.views import index, home_files
 
 urlpatterns = [
-    url(r'^(?P<filename>(robots.txt)|(humans.txt))$', home_files, name='home-files'),
-]
+                  url(r'^(?P<filename>(robots.txt)|(humans.txt))$', home_files, name='home-files'),
+                  url(r'^accounts/', include('loginsyst.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/$', home, name='home'),
-    url(r'^$', RedirectView.as_view(pattern_name='home'), name='index'),
+    url(r'^$', index, name='index'),
 )
+
+if settings.DEBUG:
+
+    if settings.MEDIA_ROOT:
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()

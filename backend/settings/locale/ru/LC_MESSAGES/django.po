@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 16:07+0300\n"
+"POT-Creation-Date: 2016-12-11 22:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,111 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: backend/settings/base.py:124
+#: backend/settings/base.py:126
 msgid "English"
 msgstr ""
 
-#: backend/settings/base.py:125
+#: backend/settings/base.py:127
 msgid "Russian"
 msgstr ""
+
+#: backend/templates/backend/index.html:10
+msgid "Hello, world!"
+msgstr "Привет, мир!"
+
+#: backend/templates/backend/index.html:11
+msgid ""
+"\n"
+"                This is a template for a simple marketing or informational "
+"website. It includes a large\n"
+"                callout called a\n"
+"                jumbotron and three supporting pieces of content. Use it as "
+"a starting point to create something more\n"
+"                unique.\n"
+"            "
+msgstr ""
+"\n"
+"Это шаблон для простого маркетингого или информационного веб-сайта. Он "
+"включает в себя большую выноску названную\n"
+"            JumboTron и три опорных частей контента. Используйте его в "
+"качестве\n"
+"отправной точки для создания чего-то более\n"
+"            уникального."
+
+#: backend/templates/backend/index.html:17
+msgid "Learn more"
+msgstr "Узнать больше"
+
+#: backend/templates/backend/index.html:25
+#: backend/templates/backend/index.html:36
+#: backend/templates/backend/index.html:45
+msgid "Heading"
+msgstr "Заголовок"
+
+#: backend/templates/backend/index.html:26
+msgid ""
+"\n"
+"                    This is a template for a simple marketing or "
+"informational website. It includes a large\n"
+"                    callout called a\n"
+"                    jumbotron and three supporting pieces of content. Use it "
+"as a starting point to create something\n"
+"                    more\n"
+"                    unique.\n"
+"                "
+msgstr ""
+"\n"
+"Это шаблон для простого маркетингого или информационного веб-сайта. Он "
+"включает в себя большую выноску названную\n"
+"            JumboTron и три опорных частей контента. Используйте его в "
+"качестве\n"
+"отправной точки для создания чего-то более\n"
+"            уникального."
+
+#: backend/templates/backend/index.html:33
+#: backend/templates/backend/index.html:42
+#: backend/templates/backend/index.html:51
+#: backend/templates/backend/index.html:59
+#: backend/templates/backend/index.html:64
+#: backend/templates/backend/index.html:72
+msgid "View details"
+msgstr "Детали"
+
+#: backend/templates/backend/index.html:37
+#: backend/templates/backend/index.html:46
+msgid ""
+"\n"
+"                    This is a template for a simple marketing or "
+"informational website. It includes a large callout\n"
+"                    called a jumbotron and three supporting pieces of "
+"content. Use it as a starting point to create\n"
+"                    something more unique.\n"
+"                "
+msgstr ""
+"\n"
+"Это шаблон для простого маркетингого или информационного веб-сайта. Он "
+"включает в себя большую выноску названную\n"
+"            JumboTron и три опорных частей контента. Используйте его в "
+"качестве\n"
+"отправной точки для создания чего-то более\n"
+"            уникального."
+
+#: backend/templates/backend/index.html:58
+msgid "This is the time using your local information"
+msgstr "Это время использует локальную информацию"
+
+#: backend/templates/backend/index.html:63
+msgid "This is the default time format"
+msgstr "Это формат времени по умолчанию"
+
+#: backend/templates/backend/index.html:67
+msgid "Time Zones"
+msgstr "Часовые пояса"
+
+#: backend/templates/backend/index.html:68
+msgid "Moscow"
+msgstr "Москва"
+
+#: backend/templates/backend/index.html:70
+msgid "New York"
+msgstr "Нью-Йорк"

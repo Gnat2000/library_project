@@ -1,6 +1,12 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+{
+%
+load
+staticfiles
+%
+}
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -17,10 +23,82 @@ body {
     padding: 0.2em 0;
 }
 
+.flags {
+    float: left;
+}
 
+.flags-list {
+    margin: 9px;
+    padding: 0;
+    min-width: 68px;
+}
 
+.flags-item {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
 
+.flags-item:first-child {
+    margin-left: 0;
+}
 
+.flags-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-indent: -9999px;
+    background: url('../img/flags.png') no-repeat;
+}
+
+.flags-link.flags-link_eng {
+    background-position: -100px -100px;
+}
+
+.flags-link.flags-link_rus {
+    background-position: -332px -100px;
+}
+
+.socials {
+    float: right;
+}
+
+.socials_list {
+    margin: 0px;
+    padding: 0;
+    min-width: 114px;
+}
+
+.socials-item {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    margin-left: 5px;
+}
+
+.socials-item:first-child {
+    margin-left: 0;
+}
+
+.socials-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-indent: -9999px;
+    background: url('../img/icon.png') no-repeat;
+}
+
+.socials-link.socials-link_gl {
+    background-position: -100px -100px;
+}
+
+.socials-link.socials-link_tw {
+    background-position: -332px -100px;
+}
+
+.socials-link.socials-link_vk {
+    background-position: -564px -100px;
+}
 
 
 

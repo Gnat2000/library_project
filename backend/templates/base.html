@@ -25,37 +25,65 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 {% block navbar %}
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Library</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}">Library</a>
+                <div class="flags">
+                    <ul class="flags-list">
+                        <li class="flags-item">
+                            <a class="flags-link flags-link_eng" href="/en/">English flag</a>
+                        </li>
+                        <li class="flags-item">
+                            <a class="flags-link flags-link_rus" href="/ru/">Russian flag</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="navbar-form navbar-right">
+                    {% if username %}
+                        <a id="logout" href="{% url 'logout' %}" class="btn btn-success">Sign Out {{ username }}</a>
+                    {% else %}
+                        <a id="google_login" href="{% url 'register' %}" class="btn btn-success">
+                            Registration
+                        </a>
+                        <a href="{% url 'login' %}" class="btn btn-success">Sign In</a>
+                        <div class="socials">
+                            <ul class="socials_list">
+                                <li class="socials-item">
+                                    <a id="google_login" href="/accounts/google/login/"
+                                       class="socials-link socials-link_gl">Sign in with Google</a>
+                                </li>
+                                <li class="socials-item">
+                                    <a id="twitter_login" href="/accounts/twitter/login/"
+                                       class="socials-link socials-link_tw">Sign in with Twitter</a>
+                                </li>
+                                <li class="socials-item">
+                                    <a id="vk_login" href="/accounts/vk/login/" class="socials-link socials-link_vk">Sign
+                                        in with VK</a>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            </div><!--/.navbar-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div><!--/.navbar-collapse -->
-    </div>
-</nav>
+    </nav>
 {% endblock %}
-{%block content%}{%endblock%}
+{% block content %}{% endblock %}
+{% block login %}{% endblock %}
 <hr>
 <div class="container">
     <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Company 2016</p>
     </footer>
 </div> <!-- /container -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
